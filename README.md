@@ -1,13 +1,14 @@
 # Portafolio & CV – Melina Cabalceta Hernández
 
 Sitio web personal que incluye currículum vitae y portafolio de proyectos universitarios.  
-Desarrollado con **Vite + React + Tailwind CSS**.
+Desarrollado con **Vite + React + TypeScript + Tailwind CSS**.
 
 ---
 
 ## Tecnologías
 
 - **React 18** – Biblioteca UI
+- **TypeScript** – Tipado estático
 - **Vite** – Bundler y servidor de desarrollo
 - **Tailwind CSS v3** – Estilos utilitarios
 - **lucide-react** – Íconos
@@ -15,31 +16,37 @@ Desarrollado con **Vite + React + Tailwind CSS**.
 ---
 
 ## Estructura del proyecto
-
 ```
+public/
+└── images/           # Imágenes de perfil y proyectos
+
 src/
-├── assets/images/        # Imágenes de perfil y proyectos
+├── assets/
 ├── components/
 │   ├── layout/
-│   │   ├── Navbar.jsx    # Barra de navegación fija con toggle de tema
-│   │   ├── Footer.jsx    # Pie de página
-│   │   └── ScrollToTop.jsx
+│   │   ├── Navbar.tsx
+│   │   ├── Footer.tsx
+│   │   └── ScrollToTop.tsx
 │   └── sections/
-│       ├── Hero.jsx       # Presentación
-│       ├── Education.jsx  # Educación y formación
-│       ├── Skills.jsx     # Habilidades e idiomas
-│       ├── Experience.jsx # Experiencia laboral
-│       ├── Portfolio.jsx  # Portafolio de proyectos
-│       └── Contact.jsx    # Formulario de contacto
-├── App.jsx               # Componente raíz, maneja el tema
-├── main.jsx              # Punto de entrada
-└── index.css             # Estilos globales (Tailwind)
+│       ├── Hero.tsx
+│       ├── AboutMe.tsx
+│       ├── Education.tsx
+│       ├── Skills.tsx
+│       ├── Experience.tsx
+│       ├── Portfolio.tsx
+│       └── Contact.tsx
+├── hooks/
+│   ├── useContactForm.ts
+│   ├── useScroll.ts
+│   └── useTheme.ts
+├── App.tsx
+├── index.css
+└── main.tsx
 ```
 
 ---
 
 ## Instalación y uso
-
 ```bash
 # Instalar dependencias
 npm install
@@ -55,14 +62,16 @@ npm run build
 
 ## Imágenes
 
-Reemplazar los archivos en `src/assets/images/` con las imágenes reales:
+Las imágenes se encuentran en `public/images/`:
 
-| Archivo         | Uso                        |
-|-----------------|----------------------------|
-| `profile.jpg`   | Foto de perfil (Hero)      |
-| `project-1.jpg` | Captura proyecto 1         |
-| `project-2.jpg` | Captura proyecto 2         |
-| `project-3.jpg` | Captura proyecto 3         |
+| Archivo           | Uso                    |
+|-------------------|------------------------|
+| `profile.jpeg`    | Foto de perfil         |
+| `logo.png`        | Logo                   |
+| `fondo.jpg`       | Imagen de fondo        |
+| `Autostock.jpeg`  | Proyecto Autostock     |
+| `black jack.jpeg` | Proyecto Black Jack    |
+| `bomberos.png`    | Proyecto Bomberos      |
 
 ---
 
@@ -72,12 +81,12 @@ Compatible con **GitHub Pages**, **Netlify** y **Vercel**.
 
 Para GitHub Pages agregar en `vite.config.js`:
 ```js
-base: '/nombre-del-repositorio/'
+base: '/Lab-Portafolio-Melina/'
 ```
 
 ---
 
-## Funcionalidades JavaScript
+## Funcionalidades
 
 1. **Modo claro/oscuro** – Toggle en Navbar, aplica clase `dark` al `<html>`
 2. **Formulario de contacto con validación** – Campos requeridos con mensajes de error
