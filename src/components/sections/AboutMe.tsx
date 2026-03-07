@@ -1,4 +1,4 @@
-import { GraduationCap, Code2, Sparkles, MapPin } from 'lucide-react'
+import { GraduationCap, Code2, Sparkles, MapPin, Download } from 'lucide-react'
 
 const HIGHLIGHTS = [
   {
@@ -42,12 +42,10 @@ export default function AboutMe() {
             {/* Contenedor de la foto */}
             <div className="group relative z-10">
               {/* Borde degradado brillante */}
-              <div className="absolute -inset-1.5 rounded-[2rem] bg-gradient-to-br from-primary via-accent to-primary/30
-                opacity-70 blur-sm transition-all duration-500 group-hover:opacity-100 group-hover:blur-md" />
+              <div className="absolute -inset-1.5 rounded-[2rem] bg-gradient-to-br from-primary via-accent to-primary/30 opacity-70 blur-sm transition-all duration-500 group-hover:opacity-100 group-hover:blur-md" />
 
-              {/* Marco de la imagen con bordes redondeados asimétricos */}
-              <div className="relative h-80 w-64 overflow-hidden rounded-[2rem] border-2 border-primary/30
-                shadow-2xl md:h-96 md:w-72">
+              {/* Marco de la imagen */}
+              <div className="relative h-80 w-64 overflow-hidden rounded-[2rem] border-2 border-primary/30 shadow-2xl md:h-96 md:w-72">
                 <img
                   src="/images/profile.jpeg"
                   alt="Melina Cabalceta Hernández"
@@ -55,14 +53,11 @@ export default function AboutMe() {
                 />
 
                 {/* Overlay degradado inferior */}
-                <div className="absolute inset-0 bg-gradient-to-t from-sapphire/60 via-transparent to-transparent
-                  opacity-60 transition-opacity duration-500 group-hover:opacity-20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-sapphire/60 via-transparent to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-20" />
 
                 {/* Badge flotante */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full
-                  bg-primary px-4 py-2 text-xs font-semibold text-white shadow-lg
-                  transition-transform duration-300 group-hover:-translate-y-1">
-                  Desarrolladora Web 
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white shadow-lg transition-transform duration-300 group-hover:-translate-y-1">
+                  Desarrolladora Web
                 </div>
               </div>
             </div>
@@ -97,8 +92,7 @@ export default function AboutMe() {
               {HIGHLIGHTS.map(({ icon: Icon, label, value }) => (
                 <div
                   key={label}
-                  className="flex items-start gap-3 rounded-xl border border-heather/20 bg-white dark:bg-sapphire/50
-                    p-4 transition-all hover:border-primary/30 hover:shadow-md"
+                  className="flex items-start gap-3 rounded-xl border border-heather/20 bg-white dark:bg-sapphire/50 p-4 transition-all hover:border-primary/30 hover:shadow-md"
                 >
                   <div className="rounded-lg bg-primary/10 p-2 shrink-0">
                     <Icon size={16} className="text-primary" />
@@ -111,20 +105,26 @@ export default function AboutMe() {
               ))}
             </div>
 
-            <div className="mt-8 flex gap-4">
+            <div className="mt-8 flex flex-wrap gap-4">
               <a
                 href="#portafolio"
-                className="rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-white
-                  transition-all hover:bg-accent hover:shadow-md"
+                className="rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-white transition-all hover:bg-accent hover:shadow-md"
               >
                 Ver proyectos
               </a>
               <a
                 href="#contacto"
-                className="rounded-full border border-primary/40 px-6 py-2.5 text-sm font-semibold text-primary
-                  transition-all hover:border-primary hover:bg-primary/10"
+                className="rounded-full border border-primary/40 px-6 py-2.5 text-sm font-semibold text-primary transition-all hover:border-primary hover:bg-primary/10"
               >
                 Contáctame
+              </a>
+              <a
+                href="/CV-Melina-Cabalceta.pdf"
+                download
+                className="rounded-full border border-primary/40 px-6 py-2.5 text-sm font-semibold text-primary transition-all hover:border-primary hover:bg-primary/10 flex items-center gap-2"
+              >
+                <Download size={15} />
+                Descargar CV
               </a>
             </div>
           </div>

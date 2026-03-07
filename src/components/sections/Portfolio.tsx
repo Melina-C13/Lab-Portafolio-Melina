@@ -35,7 +35,7 @@ const PROJECTS: Project[] = [
   image: '/images/bomberos.png',
   technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'TypeORM', 'REST API'],
   github: 'https://github.com',
-  live: 'https://example.com',
+  live: 'https://bomberosnosara.cloud',
 },
  {
   id: 3,
